@@ -94,9 +94,9 @@ h1, h2, h3, h4, h5, h6 {
 /* Sections Header
 --------------------------------*/
 .section-header {
-  margin-bottom: 60px;
+  margin-bottom: 14px;
   position: relative;
-  padding-bottom: 20px;
+  padding-bottom: 6px;
 }
 
 .section-header::before {
@@ -1597,6 +1597,13 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #footer .footer-top .footer-links ul li:first-child {
   padding-top: 0;
+}
+
+
+.footer-links .nav-menu>li {
+  float: none;
+  padding: 0px 0 !important;
+  border-bottom: 0px solid #262c44 !important;
 }
 
 #footer .footer-top .footer-links ul a {
