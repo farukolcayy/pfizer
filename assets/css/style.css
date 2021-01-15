@@ -82,15 +82,14 @@ h1, h2, h3, h4, h5, h6 {
 
 
 #videoBG{
+  width: 150%;
   position: fixed;
   z-index: -1;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  min-height: 100%;
-  min-width:100%;
-  width: auto;
-  height: auto; 
+
+ 
 }
 
 
@@ -287,7 +286,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 8px;
   text-decoration: none;
   display: inline-block;
-  color: rgba(202, 206, 221, 0.8);
+  color: #1ea9e1;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -315,7 +314,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #2f9ad6;
+  background-color: #25488a;
   visibility: hidden;
   transition: all 0.3s ease-in-out 0s;
 }
