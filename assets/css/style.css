@@ -1775,6 +1775,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .text {
+    padding-bottom: 30px;
     display: inline-block;
     font-size: 15vmin;
     line-height: 1.205;
@@ -1807,7 +1808,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .text__second-bg {
-    background-color: #f06543;
+    background-color: white;
 }
 
 .text__second {
