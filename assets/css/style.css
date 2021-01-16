@@ -925,7 +925,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   overflow: hidden;
   border-radius: 50%;
   float: left;
-  margin: 0 10px 10px 0;
+  margin: 25px 10px 10px 0;
 }
 
 #schedule .schedule-item .speaker img {
