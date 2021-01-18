@@ -10,7 +10,7 @@
     <meta content="" name="keywords">
 
     <!-- Toastr -->
-    <link rel="stylesheet" href="assets/css/toastr.css">
+    
 
 
     <!-- Favicons -->
@@ -57,6 +57,7 @@
                     <li><a href="#speakers">Konuşmacılar</a></li>
                     <li><a href="#schedule">Süreç Takvimi</a></li>
                     <li><a href="#venue">Burada Sınır Yok!</a></li>
+                    <li><a href="#footer">İletişim</a></li>
                     <!-- <li><a href="#supporters">İş Ortakları</a></li> -->
 
                     <!-- <li><a href="#faq">S.S.S</a></li> -->
@@ -313,7 +314,7 @@
 
 
                 <div class="form">
-                    <form id="form_id">
+                    <form id="form_id" class="was-validated">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <input name="name" class="form-control" id="name" placeholder="Ad" required />
@@ -418,7 +419,7 @@
                             </li>
                             <li>
                                 <i class="fa fa-angle-right"></i>
-                                <a href="#about">Hakkımızda</a>
+                                <a href="#about-2">Hakkımızda</a>
                             </li>
                             <li>
                                 <i class="fa fa-angle-right"></i>
@@ -482,8 +483,9 @@
     <script src="assets/vendor/superfish/superfish.min.js"></script>
     <script src="assets/vendor/hoverIntent/hoverIntent.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/js/toastr.min.js"></script>
+    
     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js'></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
         window.onload = function() {
@@ -516,21 +518,7 @@
             }, 5000);
         }
         $(document).ready(function() {
-            toastr.options = {
-                "closeButton": true,
-                "debug": false,
-                "progressBar": true,
-                "preventDuplicates": true,
-                "onclick": null,
-                "showDuration": "300",
-                "hideDuration": "1000",
-                "timeOut": "1500",
-                "showEasing": "swing",
-                "hideEasing": "linear",
-                "showMethod": "fadeIn",
-                "hideMethod": "fadeOut"
-            };
-
+           
 
             function isNumericInputPhone(event) {
                 var key = event.keyCode;
@@ -595,33 +583,35 @@
                 return kontrol.test(email);
             };
 
-            $('#subscribe_email').submit(function(e) {
-                var values = $(this).serialize();
-                $.ajax({
-                        type: "POST",
-                        url: "subscribe.php",
-                        data: values
-                    })
-                    .done(function(data) {
+            // $('#subscribe_email').submit(function(e) {
+            //     var values = $(this).serialize();
+            //     $.ajax({
+            //             type: "POST",
+            //             url: "subscribe.php",
+            //             data: values
+            //         })
+            //         .done(function(data) {
 
-                        if ($.trim(data) === "Abone Olundu") {
-                            toastr["success"]("Kayıt Başarılı!");
-                            $('#subscribe_email')[0].reset();
-                        } else if ($.trim(data) == "Hata: Abone olunamadı!") {
-                            toastr["warning"]("Abone Olunamadı!");
-                        } else {
-                            toastr["warning"]("Tüm alanlar doldurulmalı!");
-                        }
-                    })
-                    .fail(function(e) {
-                        console.log(e);
-                        toastr["error"]("Kayıt başarısız!");
+            //             if ($.trim(data) === "Abone Olundu") {
+            //                 swal("Başarılı", "Kayıt Başarılı", "success").then(function () {
+            //                     window.location.reload(true);
+            //                 });
+            //                 $('#subscribe_email')[0].reset();
+            //             } else if ($.trim(data) == "Hata: Abone olunamadı!") {
+            //                 toastr["warning"]("Abone Olunamadı!");
+            //             } else {
+            //                 toastr["warning"]("Tüm alanlar doldurulmalı!");
+            //             }
+            //         })
+            //         .fail(function(e) {
+            //             console.log(e);
+            //             toastr["error"]("Kayıt başarısız!");
 
 
-                    });
-                return false;
+            //         });
+            //     return false;
 
-            });
+            // });
 
 
 
@@ -642,12 +632,16 @@
                     .done(function(data) {
 
                         if ($.trim(data) === "Sorunuz iletildi") {
-                            toastr["success"]("Kayıt Başarılı!");
+                            swal("Başarılı", "Kayıt Başarılı", "success").then(function () {
+                                window.location.reload(true);
+                            });
                             $('#form_id')[0].reset();
                         } else if ($.trim(data) === "Hata: Sorunuz iletilemedi!") {
-                            toastr["warning"]("Sorunuz İletilemedi!");
+                           
+                            swal("Hata", "Sorunuz İletilemedi!", "error")
                         } else {
-                            toastr["warning"]("Tüm alanlar doldurulmalı!");
+                         
+                            swal("Hata", "Tüm alanlar doldurulmalı!", "error")
                         }
 
 
@@ -655,7 +649,8 @@
                     })
                     .fail(function(e) {
                         console.log(e);
-                        toastr["error"]("Kayıt başarısız!");
+                       
+                        swal("Hata", "Kayıt başarısız!", "error")
 
 
 

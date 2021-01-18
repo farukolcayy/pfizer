@@ -605,6 +605,10 @@ body.mobile-nav-active #mobile-nav-toggle {
         font-size: 34px;
     }
 }
+.form-control.is-valid, .was-validated .form-control:valid {
+
+    background-position: right calc(-1.625em + .1875rem) center;
+}
 
 #intro p {
     padding-left: 19%;
