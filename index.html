@@ -9,7 +9,7 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <!-- Toastr -->
+    <link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
     
 
 
@@ -39,7 +39,8 @@
 </head>
 
 <body>
-
+    
+    <div class="pfizer-loader" ></div>
     <!-- ======= Header ======= -->
     <header id="header">
         <div class="container">
@@ -47,7 +48,7 @@
             <div id="logo" class="pull-left">
                 <!-- Uncomment below if you prefer to use a text logo -->
                 <!-- <h1><a href="#intro">The<span>Event</span></a></h1>-->
-                <a href="index.html" class="scrollto"><img src="assets/img/pfize-logo.png" alt="" title=""></a>
+                <a href="index.html" class="scrollto"><img class="logo-scroll" src="assets/img/pfize-logo.png" alt="" title=""></a>
             </div>
 
             <nav id="nav-menu-container">
@@ -214,22 +215,38 @@
                         <div class="row schedule-item">
                             <div class="col-md-2"><time>13:30-14:30</time></div>
                             <div class="col-md-10">
-                                <div class="speaker" style="margin-top: 21px;">
-                                    <img src="assets/img/speakers/berk-bilmez.png" alt="Brenden Legros">
+                                <div class="row">     <h4>Pfizer Kültürü</h4></div>
+                                <div class="row" style="margin-bottom: 15px;">
+                                    <div>
+                                        <div class="speaker">
+                                            <img src="assets/img/speakers/berk-bilmez.png" alt="Brenden Legros">
+                                       </div>
+                                       
+                                       
+                                     </div>
+                                     <div  class="speaker-multi-css">
+                                        <h4> <span>Berk Bilmez</span></h4>
+                                        <p>İnsan Kaynakları Uzmanı</p>
+                                    </div>
                                 </div>
-                                <h4>Pfizer Kültürü</h4>
-                                <div style="padding-top: 15px;">
-                                    <h4> <span>Berk Bilmez</span></h4>
-                                    <p>İnsan Kaynakları Uzmanı</p>
-                                </div>
+                                
+                               <div class="row">
+                                <div>
+                                    <div class="speaker"  >
+                                        <img src="assets/img/speakers/cansu.png" alt="Hubert Hirthe">
+                                    </div>
+                                    
+                                 </div>
+                              
+                                    <div class="speaker-multi-css">
+                                        <h4><span>Cansu Öktem</span></h4>
+                                        <p>Kıdemli İşe Alım Uzmanı</p>
+                                    </div>
+                               </div>
+                                
+                             
 
-                                <div class="speaker" id="speaker-responsive" >
-                                    <img src="assets/img/speakers/cansu.png" alt="Hubert Hirthe">
-                                </div>
-                                <div class="speaker-multi-css">
-                                    <h4><span>Cansu Öktem</span></h4>
-                                    <p>Kıdemli İşe Alım Uzmanı</p>
-                                </div>
+                              
                             </div>
                           
 
@@ -246,14 +263,18 @@
                         <div class="row schedule-item">
                             <div class="col-md-2"><time>14:45-15:45</time></div>
                             <div class="col-md-10">
-                                <div class="speaker">
-                                    <img src="assets/img/speakers/serkan.png" alt="Cole Emmerich">
-                                </div>
-                                <h4>Tıbbi Tanıtım Temsilciliği, Sorumlulukları ve Aranan Nitelikler</h4>
-                                <div>
+                                <div class="row">  <h4>Tıbbi Tanıtım Temsilciliği, Sorumlulukları ve Aranan Nitelikler</h4> </div>
+                                 <div class="row">
+                                     <div class="speaker">
+                                     <img src="assets/img/speakers/serkan.png" alt="Cole Emmerich">
+                                     </div>
+                               
+                                    <div class="speaker-multi-css">
                                     <h4> <span>Serkan Mehmet Nepton</span></h4>
                                     <p>İzmir Bölge Müdürü</p>
-                                </div>
+                                   </div>
+                                 </div>
+                                
 
                             </div>
                         </div>
@@ -269,14 +290,20 @@
                         <div class="row schedule-item">
                             <div class="col-md-2"><time>16:00-17:00</time></div>
                             <div class="col-md-10">
-                                <div class="speaker">
-                                    <img src="assets/img/speakers/ugurcan.png" alt="Jack Christiansen">
+                                <div class="row">
+                                    <h4>Medikal Kısmın Biofarmadaki Rolü ve Önemi</h4>
                                 </div>
-                                <h4></h4>
-                                <div style="padding-top: 25px;">
-                                    <h4> <span>Uğurcan Koç</span></h4>
-                                    <p>Medikal Müdür</p>
+                                <div class="row">
+                                    <div class="speaker">
+                                        <img src="assets/img/speakers/ugurcan.png" alt="Jack Christiansen">
+                                    </div>
+                                  
+                                    <div  class="speaker-multi-css">
+                                        <h4> <span>Uğurcan Koç</span></h4>
+                                        <p>Medikal Müdür</p>
+                                    </div>
                                 </div>
+                               
 
                             </div>
                         </div>
@@ -302,6 +329,9 @@
 
         </section>
         <!-- End Schedule Section -->
+
+
+
         <section id="contact" class="section-bg" style="background-color: #fff;">
 
             <div class="container" data-aos="fade-up">
@@ -340,7 +370,7 @@
                                 <input class="form-control" name="school_department" id="school-department" placeholder="Bölüm Adı" required/>
                                 <div class="validate"></div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-4 ">
                                 <select class="form-control" name="class" id="className">
                                 <option selected="selected">Sınıf Seçiniz...</option>
                                 <option value="0">Hazırlık</option>
@@ -363,6 +393,9 @@
 
             </div>
         </section>
+        
+
+       
         <!-- ======= Venue Section ======= -->
         <section id="venue" class="section-with-bg">
 
@@ -401,7 +434,7 @@
             <div class="container" id="footer-style">
                 <div class="row">
                       <div class="col-lg-3 col-md-6 footer-info" style="text-align: center;">
-                        <a href="index.html"><img src="assets/img/pfize-logo.png" alt="TheEvenet"></a>
+                        <a href="index.html"><img src="assets/img/Pfizer_White.png" alt="TheEvenet"></a>
                       </div>
                     <div class="col-lg-3 col-md-6 footer-info">
                        
@@ -474,6 +507,7 @@
     <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
     <!-- Vendor JS Files -->
+    <script src="http://vjs.zencdn.net/4.12/video.js"></script>
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
@@ -518,7 +552,34 @@
             }, 5000);
         }
         $(document).ready(function() {
-           
+        
+            setTimeout(function () {
+                $('.pfizer-loader').css("display","none");
+            }, 1500);
+
+
+
+
+          var initialSrc = "/assets/img/pfize-logo.png";
+          var scrollSrc = "/assets/img/Pfizer_White.png";
+
+          $(window).scroll(function() {
+              var value = $(this).scrollTop();
+            if(value>100){
+                $(".logo-scroll").attr("src",scrollSrc);
+               } 
+               else
+                {
+                    $(".logo-scroll").attr("src",initialSrc);
+                }
+            
+              
+          });
+
+
+
+
+
 
             function isNumericInputPhone(event) {
                 var key = event.keyCode;
