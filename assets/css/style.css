@@ -9,6 +9,37 @@
 # General
 --------------------------------------------------------------*/
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: none !important;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #2f9ad6;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2f9ad6;
+}
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
 body {
     background: #fff;
     color: #2f3138;
@@ -988,10 +1019,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 @media (max-width: 480px) {
-    .schedule-item .col-md-10 .resonsive-text{
+    .schedule-item .col-md-10 .resonsive-text {
         padding-left: 15px;
     }
-    .schedule-item .col-md-10 .resonsive-event{
+    .schedule-item .col-md-10 .resonsive-event {
         padding-left: 15px;
     }
     #intro {
@@ -1021,10 +1052,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 @media(min-width:481px) and (max-width: 768px) {
-    .schedule-item .col-md-10 .resonsive-text{
+    .schedule-item .col-md-10 .resonsive-text {
         padding-left: 15px;
     }
-    .schedule-item .col-md-10 .resonsive-event{
+    .schedule-item .col-md-10 .resonsive-event {
         padding-left: 15px;
     }
     #videoBG {
@@ -1050,10 +1081,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 @media(min-width:769px) and (max-width:1024px) {
-    .schedule-item .col-md-10 .resonsive-text{
+    .schedule-item .col-md-10 .resonsive-text {
         padding-left: 15px;
     }
-    .schedule-item .col-md-10 .resonsive-event{
+    .schedule-item .col-md-10 .resonsive-event {
         padding-left: 15px;
     }
     #intro {
