@@ -1187,7 +1187,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     top: 0px;
     width: 100%;
     height: 100%;
-    z-index: 9999;
+    z-index: 9997;
     background: url('/assets/img/pfizer-loader.gif') 50% 50% no-repeat;
     background-color: #EEEEEE;
 }
@@ -2073,3 +2073,40 @@ body.mobile-nav-active #mobile-nav-toggle {
     /* Opera */
     transform: scale(1.25);
     z-index: 999;
+}
+
+.php-email-form button[type="submit"] {
+    background: #2f9ad6;
+    border: 0;
+    padding: 10px 40px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.php-email-form button[type="submit"]:hover {
+    background: red;
+}
+
+.php-email-form .validate {
+    display: none;
+    color: red;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.blocker {
+    z-index: 9999 !important;
+}
+
+@media (min-width: 360px) and (max-width:470px) {
+    .modal {
+        width: 100% !important;
+        padding: 0px !important;
+    }
+    .modal iframe {
+        height: 300px !important;
+    }
+}

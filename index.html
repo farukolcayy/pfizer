@@ -31,18 +31,89 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: TheEvent - v2.3.0
-  * Template URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 </head>
+
+<style>
+    .blocker {
+        z-index: 9999;
+    }
+
+    .modal a.close-modal {
+        top: 1.5px !important;
+        right: 1.5px !important;
+    }
+
+    .modal {
+        background: #151515 !important;
+    }
+
+    #question_form .form-control {
+        border: 4px solid #2f9ad6;
+    }
+</style>
 
 <body>
 
     <div class="pfizer-loader"></div>
+
+    <div id="ex1" class="modal" style="max-width: 1350px !important;z-index: 9999;height: fit-content;">
+        <div class="container" style="margin: 0px;">
+            <div class="row">
+                <div class="col-md-9" id="live-stream-area">
+                    <iframe src="https://player.vimeo.com/video/504302466" style="width: inherit;" width="1000"
+                        height="500" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="col-md-3">
+                    <div class="row" style="justify-content: center;">
+                        <h3 style="font-weight: 600;color: white;font-size: 1.25rem;">Konuşmacıya soru sor</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form id="question_form" class="">
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <input name="name" class="form-control" id="name" placeholder="Ad" required />
+                                        <div class="validate"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <input class="form-control" name="surname" id="surname" placeholder="Soyad"
+                                            required />
+                                        <div class="validate"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <textarea rows="10" class="form-control" name="question" id="question"
+                                            placeholder="Sorunuzu giriniz..." required></textarea>
+                                        <div class="validate"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <div class="text-center php-email-form"><button name="basvuru"
+                                                type="submit">GÖNDER</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- ======= Header ======= -->
     <header id="header">
         <div class="container">
@@ -83,10 +154,12 @@
                             class="text__word">Buluşması</span><span class="text__second-bg"></span></span>
                 </p>
                 <img class="intro-image" src="assets/img/logo-02.png " alt="">
-                <!-- <h1 style="font-size: 48px; color: #25488a;">PFIZER<span> İZMİR BULUŞMASI <br></span>  <br>  </h1>
-             <p style="color: #25488a; font-size: 40px;">Yaşamlara Dokunmak İçin <span style="color: #1ea9e1;">"BURADA SINIR YOK"</span></p> -->
             </div>
-            <div class="col-md-8">
+            <div class="col-md-2" style="margin-bottom: auto;margin-top: auto;text-align: center;">
+                <span style="font-weight: 600;color: #f82249;">Canlı Yayın İçin Tıklayınız!</span>
+                <a id="live-button" href="#ex1" class="play-btn" style="margin-left: auto;margin-right: auto;"></a>
+            </div>
+            <div class="col-md-6">
                 <video id="videoBG" poster="assets/img/venue-gallery/poster.jpg" autoplay muted loop>
                     <source src="assets/img/venue-gallery/Pfizer_Web_Hero_RibbonHelix_Cas9 EXTENDED_2 (1).mp4"
                         type="video/mp4">
@@ -579,9 +652,11 @@
     <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
     <!-- Vendor JS Files -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.customSelect/0.5.1/jquery.customSelect.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
     <script src="http://vjs.zencdn.net/4.12/video.js"></script>
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="assets/vendor/venobox/venobox.min.js"></script>
@@ -625,12 +700,43 @@
         }
         $(document).ready(function () {
 
-            setTimeout(function () {
-                $('.pfizer-loader').css("display", "none");
-            }, 1500);
+            var questionStatus = true;
 
+            function setQuestionTime() {
+                setTimeout(function () {
+                    questionStatus = true;
+                }, 30000);
+            }
 
+            $.ajax({
+                type: 'POST',
+                dataType: "json",
+                async: false,
+                url: 'getStreamLink.php',
+                data: {
+                    liveId: 1
+                }
+            })
+                .done(function (data) {
+                    if (data.result != '') {
+                        $("#live-stream-area").html(data.result.liveLink);
+                    } else {
+                        $("#live-stream-area").html("<h1>Yayın Yüklenemedi</h1>");
+                        console.log(data);
+                        return false;
+                    }
+                })
+                .fail(function (e) {
+                    $("#live-stream-area").html("<h1>Bağlantı Hatası</h1>");
+                    console.log(e);
+                    return false;
+                });
 
+            $("#live-button").click(function () {
+                $("#ex1").modal({
+                    fadeDuration: 300
+                });
+            });
 
             var initialSrc = "/assets/img/pfize-logo.png";
             var scrollSrc = "/assets/img/Pfizer_White.png";
@@ -643,14 +749,7 @@
                 else {
                     $(".logo-scroll").attr("src", initialSrc);
                 }
-
-
             });
-
-
-
-
-
 
             function isNumericInputPhone(event) {
                 var key = event.keyCode;
@@ -708,96 +807,75 @@
                 formatToPhone(e);
             });
 
-
-
             function MailKontrol(email) {
                 var kontrol = new RegExp(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
                 return kontrol.test(email);
             };
 
-            // $('#subscribe_email').submit(function(e) {
-            //     var values = $(this).serialize();
-            //     $.ajax({
-            //             type: "POST",
-            //             url: "subscribe.php",
-            //             data: values
-            //         })
-            //         .done(function(data) {
+            setTimeout(function () {
+                $('.pfizer-loader').css("display", "none");
+            }, 1500);
 
-            //             if ($.trim(data) === "Abone Olundu") {
-            //                 swal("Başarılı", "Kayıt Başarılı", "success").then(function () {
-            //                     window.location.reload(true);
-            //                 });
-            //                 $('#subscribe_email')[0].reset();
-            //             } else if ($.trim(data) == "Hata: Abone olunamadı!") {
-            //                 toastr["warning"]("Abone Olunamadı!");
-            //             } else {
-            //                 toastr["warning"]("Tüm alanlar doldurulmalı!");
-            //             }
-            //         })
-            //         .fail(function(e) {
-            //             console.log(e);
-            //             toastr["error"]("Kayıt başarısız!");
+            $('#question_form').submit(function (e) {
 
-
-            //         });
-            //     return false;
-
-            // });
-
-
-
-
+                if (questionStatus === false) {
+                    swal("Uyarı", "Yeni soru için 30 sn beklemelisiniz!", "warning");
+                    return false;
+                } else {
+                    var values = $(this).serialize();
+                    $.ajax({
+                        type: 'POST',
+                        url: 'insertQuestion.php',
+                        data: values
+                    })
+                        .done(function (data) {
+                            if ($.trim(data) === "Sorunuz iletildi") {
+                                swal("Başarılı", data, "success");
+                                questionStatus = false;
+                                setQuestionTime();
+                            } else {
+                                swal("Hata", data, "error");
+                            }
+                        })
+                        .fail(function () {
+                            swal("Hata", "Sorunuz iletilemedi! Lütfen tekrar deneyin.", "error");
+                        });
+                }
+                return false;
+            });
 
             $('#form_id').submit(function (e) {
 
                 var className = $("#className option:selected").text();
-
-
                 var values = $(this).serialize();
                 values += "&className=" + encodeURIComponent(className);
+
                 $.ajax({
                     type: "POST",
                     url: "post.php",
                     data: values
                 })
                     .done(function (data) {
-
-                        if ($.trim(data) === "Sorunuz iletildi") {
+                        if ($.trim(data) === "Başvurunuz iletildi") {
                             swal("Başarılı", "Kayıt Başarılı", "success").then(function () {
                                 window.location.reload(true);
                             });
                             $('#form_id')[0].reset();
-                        } else if ($.trim(data) === "Hata: Sorunuz iletilemedi!") {
-
-                            swal("Hata", "Sorunuz İletilemedi!", "error")
+                        } else if ($.trim(data) === "Hata: Başvurunuz iletilemedi!") {
+                            swal("Hata", "Başvurunuz İletilemedi!", "error");
                         } else {
-
-                            swal("Hata", "Tüm alanlar doldurulmalı!", "error")
+                            swal("Hata", "Tüm alanlar doldurulmalı!", "error");
                         }
-
-
-
                     })
                     .fail(function (e) {
                         console.log(e);
-
-                        swal("Hata", "Kayıt başarısız!", "error")
-
-
-
+                        swal("Hata", "Kayıt başarısız!", "error");
                     });
                 return false;
-
-
-
             });
         });
     </script>
 
-
-
-    <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 
 </body>
