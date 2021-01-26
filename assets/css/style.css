@@ -632,7 +632,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #intro .play-btn {
     width: 94px;
     height: 94px;
-    background: radial-gradient(#f82249 50%, rgba(101, 111, 150, 0.15) 52%);
+    background: radial-gradient(#328ac4  50%, rgba(101, 111, 150, 0.15) 52%);
     border-radius: 50%;
     display: block;
     position: relative;
@@ -1017,15 +1017,18 @@ body.mobile-nav-active #mobile-nav-toggle {
     width: 90%;
     margin-left: 40%;
 }
-@media(max-width:375px){
+@media(min-width:375px) and (max-width:479px){
     #live-button{
         padding-top: 21px;
         background-color: #e6e5e6;
      }
+    
 }
+
+
 @media (max-width: 480px) {
      #live-button{
-        padding-top: 21px;
+        height: 185px;
         background-color: #e6e5e6;
      }
 
@@ -1036,7 +1039,7 @@ body.mobile-nav-active #mobile-nav-toggle {
         padding-left: 15px;
     }
     #intro {
-        height: 83vh;
+        height: 60vh;
     }
     #videoBG {
         width: 200%;
@@ -1049,7 +1052,7 @@ body.mobile-nav-active #mobile-nav-toggle {
         padding-right: 62px;
     }
     .intro-logo {
-        margin-top: 120px;
+        margin-top: 144px;
         margin-left: 2%;
     }
     .intro-logo img {
@@ -1072,7 +1075,7 @@ body.mobile-nav-active #mobile-nav-toggle {
         top: 41%;
     }
     #intro {
-        height: 81vh;
+        height: 70vh;
     }
     .intro-image {
         width: 139%;
@@ -1090,6 +1093,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     }
 }
 
+    
 @media(min-width:769px) and (max-width:1024px) {
     .schedule-item .col-md-10 .resonsive-text {
         padding-left: 15px;
@@ -1098,7 +1102,7 @@ body.mobile-nav-active #mobile-nav-toggle {
         padding-left: 15px;
     }
     #intro {
-        height: 88vh;
+        height: 78vh;
     }
     #videoBG {
         top: 39%;
