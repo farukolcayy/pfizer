@@ -601,6 +601,12 @@ body.mobile-nav-active #mobile-nav-toggle {
     }
 }
 
+@media (min-width: 991px) {
+    #about-2 .container {
+        padding: 8%;
+    }
+}
+
 #intro h1 {
     color: #fff;
     font-family: "Raleway", sans-serif;
