@@ -4,18 +4,60 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-!(function($) {
+!(function ($) {
+
+  //Countdown js initialization
+  document.addEventListener('readystatechange', event => {
+    if (event.target.readyState === "complete") {
+      var clockdiv = document.getElementsByClassName("countdown");
+      var countDownDate = new Array();
+      for (var i = 0; i < clockdiv.length; i++) {
+        countDownDate[i] = new Array();
+        countDownDate[i]['el'] = clockdiv[i];
+        countDownDate[i]['time'] = new Date(clockdiv[i].getAttribute('data-date')).getTime();
+        countDownDate[i]['days'] = 0;
+        countDownDate[i]['hours'] = 0;
+        countDownDate[i]['seconds'] = 0;
+        countDownDate[i]['minutes'] = 0;
+      }
+
+      var countdownfunction = setInterval(function () {
+        for (var i = 0; i < countDownDate.length; i++) {
+          var now = new Date().getTime();
+          var distance = countDownDate[i]['time'] - now;
+          countDownDate[i]['days'] = Math.floor(distance / (1000 * 60 * 60 * 24));
+          countDownDate[i]['hours'] = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          countDownDate[i]['minutes'] = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          countDownDate[i]['seconds'] = Math.floor((distance % (1000 * 60)) / 1000);
+
+          if (distance < 0) {
+            countDownDate[i]['el'].querySelector('.days').innerHTML = 0;
+            countDownDate[i]['el'].querySelector('.hours').innerHTML = 0;
+            countDownDate[i]['el'].querySelector('.minutes').innerHTML = 0;
+            countDownDate[i]['el'].querySelector('.seconds').innerHTML = 0;
+          } else {
+            countDownDate[i]['el'].querySelector('.days').innerHTML = countDownDate[i]['days'];
+            countDownDate[i]['el'].querySelector('.hours').innerHTML = countDownDate[i]['hours'];
+            countDownDate[i]['el'].querySelector('.minutes').innerHTML = countDownDate[i]['minutes'];
+            countDownDate[i]['el'].querySelector('.seconds').innerHTML = countDownDate[i]['seconds'];
+          }
+        }
+      }, 1000);
+    }
+  });
+
+
   "use strict";
 
   // Back to top button
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $('.back-to-top').fadeIn('slow');
     } else {
       $('.back-to-top').fadeOut('slow');
     }
   });
-  $('.back-to-top').click(function() {
+  $('.back-to-top').click(function () {
     $('html, body').animate({
       scrollTop: 0
     }, 1500, 'easeInOutExpo');
@@ -23,7 +65,7 @@
   });
 
   // Header fixed on scroll
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $('#header').addClass('header-scrolled');
     } else {
@@ -36,7 +78,7 @@
   }
 
   // Initialize Venobox
-  $(window).on('load', function() {
+  $(window).on('load', function () {
     $('.venobox').venobox({
       bgcolor: '',
       overlayColor: 'rgba(6, 12, 34, 0.85)',
@@ -68,19 +110,19 @@
     $('body').append('<div id="mobile-body-overly"></div>');
     $('#mobile-nav').find('.menu-has-children').prepend('<i class="fa fa-chevron-down"></i>');
 
-    $(document).on('click', '.menu-has-children i', function(e) {
+    $(document).on('click', '.menu-has-children i', function (e) {
       $(this).next().toggleClass('menu-item-active');
       $(this).nextAll('ul').eq(0).slideToggle();
       $(this).toggleClass("fa-chevron-up fa-chevron-down");
     });
 
-    $(document).on('click', '#mobile-nav-toggle', function(e) {
+    $(document).on('click', '#mobile-nav-toggle', function (e) {
       $('body').toggleClass('mobile-nav-active');
       $('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
       $('#mobile-body-overly').toggle();
     });
 
-    $(document).click(function(e) {
+    $(document).click(function (e) {
       var container = $("#mobile-nav, #mobile-nav-toggle");
       if (!container.is(e.target) && container.has(e.target).length === 0) {
         if ($('body').hasClass('mobile-nav-active')) {
@@ -99,7 +141,7 @@
   if (window.matchMedia("(max-width: 991px)").matches) {
     scrolltoOffset += 20;
   }
-  $(document).on('click', '.nav-menu a, #mobile-nav a, .scrollto', function(e) {
+  $(document).on('click', '.nav-menu a, #mobile-nav a, .scrollto', function (e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       if (target.length) {
@@ -131,7 +173,7 @@
   });
 
   // Activate smooth scroll on page load with hash links in the url
-  $(document).ready(function() {
+  $(document).ready(function () {
     if (window.location.hash) {
       var initial_nav = window.location.hash;
       if ($(initial_nav).length) {
@@ -147,10 +189,10 @@
   var nav_sections = $('section');
   var main_nav = $('.nav-menu, #mobile-nav');
 
-  $(window).on('scroll', function() {
+  $(window).on('scroll', function () {
     var cur_pos = $(this).scrollTop() + 200;
 
-    nav_sections.each(function() {
+    nav_sections.each(function () {
       var top = $(this).offset().top,
         bottom = top + $(this).outerHeight();
 
@@ -189,7 +231,7 @@
   });
 
   // Buy tickets select the ticket type on click
-  $('#buy-ticket-modal').on('show.bs.modal', function(event) {
+  $('#buy-ticket-modal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget);
     var ticketType = button.data('ticket-type');
     var modal = $(this);
@@ -203,7 +245,7 @@
       once: true
     });
   }
-  $(window).on('load', function() {
+  $(window).on('load', function () {
     aos_init();
   });
 
