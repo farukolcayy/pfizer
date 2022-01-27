@@ -2205,6 +2205,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .countdown .clock-item .count-text {
+    padding-left: 13% !important;
     font-weight: 100 !important;
     background: #fff;
     /* font-family: "Arvo", serif !important; */
