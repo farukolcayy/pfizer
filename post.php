@@ -1,12 +1,5 @@
 
  <?php
-    /* Bağlantıyı Başlat */
-    $mysqli = new mysqli("localhost", "pfizerkariyer_pfizerkariyer", "2021pfizer?", "pfizerkariyer_pfizerkariyer");/* Bağlantıyı Kontrol Et */
-    if ($mysqli->connect_error) {
-        /* Bağlantı Başarısız İse */
-        echo "Bağlantı Başarısız. Hata: " . $mysqli->connect_error;
-        exit;
-    }
 
     $name = $_POST['name'];
     $surname = $_POST['surname'];
@@ -16,26 +9,37 @@
     $school_department = $_POST['school_department'];
     $className = $_POST['className'];
 
+    $data = array();
 
 
-    if (!empty($name) && !empty($surname) && !empty($email) && !empty($tel) && !empty($school_name) && !empty($school_department) && !empty($className) && $className != "Sınıf Seçiniz...") {
-        $sql = "INSERT INTO basvuru (name,surname,emailAddress,phoneNumber,university,department,class) VALUES ('$name','$surname','$email','$tel','$school_name','$school_department','$className')";
+    try {
 
-
-        mysqli_set_charset($mysqli, "utf8");
-
-        if (mysqli_query($mysqli, $sql)) {
-            echo "Başvurunuz iletildi";
+        $conn = new PDO('mysql:host=5.2.84.96;dbname=badiwork_pfizer;charset=utf8;port=3306', 'badiwork_pfizer', 'Ok?2021?.');
+        $query = $conn->prepare("INSERT INTO basvuru SET
+            name = ?,
+            surname = ?,
+            emailAddress = ?,
+            phoneNumber = ?,
+            university = ?,
+            department = ?,
+            class = ?");
+    
+        $insert = $query->execute(array($name,$surname,$email,$tel,$school_name,$school_department,$className));
+    
+        if ($insert) {
+            $last_id = $conn->lastInsertId();
+            $data['status'] = 'ok';
+            $data['result'] = 'Başvurunuz iletildi';
+            echo json_encode($data);
         } else {
-            echo "Hata: Başvurunuz iletilemedi!";
+            $data['status'] = 'err';
+            $data['result'] = 'Hata: Başvurunuz iletilemedi!';
+            echo json_encode($data);
         }
-    } else {
-        echo "Tüm alanlar doldurulmalı!";
+    } catch (PDOexception $exe) {
+    
+        $data['status'] = 'err';
+        $data['result'] = 'Bağlantı Hatası!';
+        // $data['result'] = $exe->getMessage();
+        echo json_encode($data);
     }
-
-
-
-
-    $mysqli->close();
-    ?>
-

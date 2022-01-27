@@ -638,7 +638,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     font-family: "Raleway", sans-serif;
     color: #525252;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 36px;
 }
 
 @media (max-width: 991px) {
@@ -1212,7 +1212,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #schedule .schedule-item h4 span {
     font-style: italic;
     color: #19328e;
-    font-weight: normal;
+    font-weight: 700;
     font-size: 16px;
 }
 
@@ -2217,4 +2217,16 @@ body.mobile-nav-active #mobile-nav-toggle {
     text-align: center;
     line-height: 1;
     border-radius: 0 0 4px 4px
+}
+
+#main_text_1 {
+    color: #1ea9e1 !important;
+}
+
+#main_text_2 {
+    color: #254789 !important;
+}
+
+.row .resonsive-event{
+    margin: 2%;
 }
