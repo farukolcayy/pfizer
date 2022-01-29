@@ -238,6 +238,18 @@
     modal.find('#ticket-type').val(ticketType);
   });
 
+  $(function () {
+
+        //Select2
+        $(".selection-2").select2({
+            minimumResultsForSearch: 20,
+            dropdownParent: $('#dropDownSelect1')
+        });
+        $('.selection-2').select2().on('select2:open', function (e) {
+            $('.select2-search__field').attr('placeholder', 'Ara');
+        })
+    });
+
   // Init AOS
   function aos_init() {
     AOS.init({
