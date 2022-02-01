@@ -40,7 +40,7 @@
             <div class="ag-tabs_box">
                 <ul class="ag-tabs_list">
                     <li class="js-tabs_item ag-tabs_item js-ag-tabs_item__active">
-                        <a href="#service-1" class="ag-tabs_link" aria-expanded="true">Prescription Career With Pfizer</a>
+                        <a href="#service-1" class="ag-tabs_link" aria-expanded="true">Pfizer ile Medikalde Kariyer</a>
                     </li>
                 </ul>
 
@@ -148,7 +148,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.15/plugins/export/libs/FileSaver.js/FileSaver.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.1.1/exceljs.js"></script>
-    <script src="./js/excelExport.js?v=1.2"></script>
+    <script src="./js/excelExport.js?v=1.3"></script>
 
     <script>
         $(document).ready(function() {
@@ -185,7 +185,7 @@
             $("#exportButton1").click(function() {
                 const header = ["Id", "Ad-Soyad", "E-mail", "Telefon", "Üniversite", "Bölüm", "Sınıf", "Soru", "Başvuru Tarihi"];
                 const worksheet = "Başvurular";
-                const filename = "Prescription Career With Pfizer Başvurular";
+                const filename = "Pfizer ile Medikalde Kariyer Başvurular";
                 exportExcel(header, worksheet, filename, array1);
             });
 
