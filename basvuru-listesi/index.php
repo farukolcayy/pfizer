@@ -75,13 +75,13 @@
 
                                                 <tr>
                                                     <th>Id</th>
-                                                    <th>Ad</th>
-                                                    <th>Soyad</th>
+                                                    <th>Ad-Soyad</th>
                                                     <th>E-mail</th>
                                                     <th>Telefon</th>
                                                     <th>Üniversite</th>
                                                     <th>Bölüm</th>
                                                     <th>Sınıf</th>
+                                                    <th>Soru</th>
                                                     <th>Başvuru Tarihi</th>
                                                 </tr>
 
@@ -99,13 +99,13 @@
                                                     foreach ($query as $row) {
                                                         echo '<tr>';
                                                         echo '<td>' . $row['Id'] . '</td>';
-                                                        echo '<td>' . $row['name'] . '</td>';
-                                                        echo '<td>' . $row['surname'] . '</td>';
+                                                        echo '<td>' . $row['nameSurname'] . '</td>';
                                                         echo '<td>' . $row['emailAddress'] . '</td>';
                                                         echo '<td>' . $row['phoneNumber'] . '</td>';
                                                         echo '<td>' . $row['university'] . '</td>';
                                                         echo '<td>' . $row['department'] . '</td>';
                                                         echo '<td>' . $row['class'] . '</td>';
+                                                        echo '<td>' . $row['otherQuestion'] . '</td>';
                                                         echo '<td>' . $row['applyDate'] . '</td>';
                                                         echo '</tr>';
                                                     }
@@ -183,7 +183,7 @@
             });
 
             $("#exportButton1").click(function() {
-                const header = ["Id", "Ad", "Soyad", "E-mail", "Telefon", "Üniversite", "Bölüm", "Sınıf", "Başvuru Tarihi"];
+                const header = ["Id", "Ad-Soyad", "E-mail", "Telefon", "Üniversite", "Bölüm", "Sınıf", "Soru", "Başvuru Tarihi"];
                 const worksheet = "Başvurular";
                 const filename = "Prescription Career With Pfizer Başvurular";
                 exportExcel(header, worksheet, filename, array1);

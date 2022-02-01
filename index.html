@@ -24,11 +24,12 @@
     <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css?v=1.2.2" rel="stylesheet">
-
+    <link href="assets/css/style.css?v=1.2.3" rel="stylesheet">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
 </head>
 <style>
@@ -42,16 +43,165 @@
     }
 
     .modal {
-        background: #151515 !important;
+        /* background: #151515 !important; */
     }
 
     #question_form .form-control {
         border: 4px solid #2f9ad6;
     }
+
+    @media (max-width: 768px) {
+        .modal .row {
+            padding: 20% 12% !important;
+        }
+    }
 </style>
 
 <body>
+
     <div class="pfizer-loader"></div>
+
+    <div id="ex1" class="modal" style="padding: 70px; overflow: auto; max-width: 800px !important; ">
+        <div>
+            <div class="row">
+                <p>
+                    Değerli katılımcımız, Kişisel Verilerin Korunması Kanunu kapsamında sizleri bilgilendirmek
+                    istiyoruz. Badiworks olarak kişisel verilerinizin güvenliği hususuna azami hassasiyet
+                    göstermekte olduğumuzu bilmenizi isteriz. Bu sorumluluğumuzun tam idraki
+                    ile KVK Kanunu'nda tanımlı şekli ile "Veri Sorumlusu" sıfatıyla, kişisel verilerinizi aşağıda izah
+                    edildiği surette ve mevzuat tarafından emredilen sınırlar çerçevesinde işlemekteyiz.
+                </p>
+                <p>
+                    6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") uyarınca kimliğinizi belirli veya
+                    belirlenebilir kılan her türlü bilginiz ve özel nitelikli kişisel verileriniz dâhil kişisel
+                    verileriniz, veri sorumlusu olarak Badiworks tarafından işlenebilecektir.
+                </p>
+                <p>
+                    Badiworks 6698 sayılı Kişisel Verilerin Korunması Kanununda yer alan düzenlemelere uygun
+                    olarak kişisel veri işleme faaliyetlerini yürütmektedir.
+                </p>
+                <br>
+                <h4>
+                    Veri Sorumlusu
+                </h4>
+                <br>
+                <p>
+                    'Veri Sorumlusunun Aydınlatma Yükümlülüğü' başlıklı KVKK'nın 10'uncu maddesinin 1'inci fıkrasının
+                    (a) bendi veri sorumlusunun kimliği konusunda bilgi verilmesi yükümlülüğünü getirmiştir. KVKK'nın
+                    3'üncü maddesinin 1'inci fıkrasının (ı) bendinde veri sorumlusu,
+                    'Kişisel verilerin işleme amaçlarını ve vasıtalarını belirleyen, veri kayıt sisteminin kurulmasından
+                    ve yönetilmesinden sorumlu olan gerçek veya tüzel kişiler' olarak tanımlanmıştır. KVKK'nın
+                    uygulanması bakımından Badiworks
+                    'veri sorumlusu' olacaktır.
+                </p>
+                <br>
+                <h4>
+                    Veri Güvenliği
+                </h4>
+                <br>
+                <p>
+                    Badiworks bünyesinde işlenmekte olan tüm kişisel verilerin gizliliğini ve güvenliğini
+                    korumaya önem veriyoruz. Bu doğrultuda, kişisel verilere yetkisiz erişim, zarar, kayıp veya ifşa
+                    risklerine karşı korumak için gerekli tüm teknik ve idari güvenlik
+                    önlemlerini Badiworks almaktadır.
+                </p>
+                <br>
+                <h4>
+                    Kişisel Verilerin İşlenme Amaçları
+                </h4>
+                <br>
+                <p>
+                    Söz konusu kişisel veriler, KVKK'nın 5'inci ve 6'ncı maddelerinde belirtilen kişisel veri işleme
+                    şartlarından bir veya birkaçına dayalı olarak, KVKK'nın 4'üncü maddesinde belirtilen kişisel veri
+                    işleme ilkelerine uygun şekilde işlenmektedir. BCCT tarafından
+                    işlenen kişisel veriler 5253 sayılı Dernekler Kanunu, Dernekler Yönetmeliği, 6563 sayılı Elektronik
+                    Ticaretin Düzenlenmesi Hakkında Kanun, Ticari İletişim ve Ticari Elektronik İletiler Hakkında
+                    Yönetmelik ve ilgili diğer mevzuat kapsamındaki
+                    yükümlülüklerimiz de dahil olmak üzere hukuki yükümlülüklerimizi yerine getirmek, organizasyonel
+                    aktivitelere ilişkin hizmet sunmak, etkinliğin gerçekleştirilmesini sağlama ve ödemelerin
+                    gerçekleştirilmesi amaçlarıyla işlenmektedir.
+                    Katılımcıların belirlenmesi, katılımcı kitlesinin analizi, daha sonraki etkinlikler için fikir
+                    oluşturması ya da katılımcı listelerinin oluşturulması için kişisel verileriniz
+                    kullanılabilmektedir. Ayrıca onay vermeniz halinde iletişim
+                    bilgileriniz sizleri daha sonraki etkinliklerimizden haberdar etme amaçları ile işlenebilmektedir.
+                </p>
+                <br>
+                <h4>
+                    İşlenen Kişisel Verilerin Kimlere ve Hangi Amaçlarla Aktarılabileceği
+                </h4>
+                <br>
+                <p>
+                    Bizlerle paylaşmış olduğunuz kişisel verileriniz etkinlik süresince güvenliğin temini amacıyla
+                    etkinlik alanı sahibi, etkinlik iş birliği ortakları veya sponsorları gibi üçüncü kişilerle
+                    paylaşılabilmektedir. Ayrıca, etkinlik kapsamında elde edilen fotoğraf,
+                    video gibi kişisel verileriniz etkinliğin veya kurumun tanıtımı, bilgilendirilmesi ve reklam
+                    faaliyetlerinin yürütülmesi amacı ile sosyal medya hesapları aracılığı ile paylaşılabilmektedir.
+                </p>
+                <br>
+                <h4>
+                    Kişisel Verilerinizi Toplamamızın Yöntemleri ve Hukuki Sebepleri
+                </h4>
+                <br>
+                <p>
+                    Kişisel veriler, etkinlik faaliyetlerimizi yürütmek ve sağlıklı iletişimin sağlanması amacıyla
+                    Badiworks tarafından “Etkinlik Kayıt Formu” ile internet sitesi veya e-posta aracılığıyla
+                    elektronik olarak ya da telefon aracılıyla sözel olarak toplanmaktadır.
+                    Kişisel veriler KVKK’nın 5. ve 6. maddelerinde belirtilen kişisel veri işleme şartları ve amaçları
+                    kapsamında ilgili kişinin temel hak ve özgürlüklerine zarar vermemek kaydı ile bu metinde belirtilen
+                    amaçlarla da işlenebilmekte ve
+                    aktarılabilmektedir. Badiworks bünyesinde işlenen kişisel veriler üyelik süresince
+                    güncellenerek işlenebilecektir.
+                </p>
+                <br>
+                <h4>
+                    Kişisel Veri Sahibinin KVKK’nın 11. Maddesinde Sayılan Hakları:
+                </h4>
+                <br>
+                <p>
+                    Kişisel veri sahipleri olarak, haklarınıza ilişkin taleplerinizi <a style="color: #fd6500;"
+                        href="mailto:hello@badiworks.com">hello@badiworks.com
+                    </a> adresine e-posta göndererek tarafımıza iletebilirsiniz. Badiworks talebin niteliğine
+                    göre talebi en kısa sürede ve en geç otuz (30) gün içinde sonuçlandıracaktır. Kişisel verisi işlenen
+                    gerçek kişilerin KVKK’nın 11. maddesi
+                    uyarıca sahip olduğu haklar aşağıdaki gibidir:
+                </p>
+                <ul>
+                    <li>
+                        Kişisel veri işlenip işlenmediğini öğrenme,
+                    </li>
+                    <li>
+                        Kişisel verileri işlenmişse buna ilişkin bilgi talep etme,
+                    </li>
+                    <li>
+                        Kişisel verilerin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme,
+                    </li>
+                    <li>
+                        Yurt içinde veya yurt dışında kişisel verilerin aktarıldığı üçüncü kişileri bilme, Kişisel
+                        verilerin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme ve bu
+                        kapsamda yapılan işlemin kişisel verilerin aktarıldığı üçüncü kişilere
+                        bildirilmesini isteme,
+                    </li>
+                    <li>
+                        KVKK ve ilgili diğer kanun hükümlerine uygun olarak işlenmiş olmasına rağmen, işlenmesini
+                        gerektiren sebeplerin ortadan kalkması hâlinde kişisel verilerin silinmesini veya yok edilmesini
+                        isteme ve bu kapsamda yapılan işlemin kişisel verilerin aktarıldığı
+                        üçüncü kişilere bildirilmesini isteme,
+                    </li>
+                    <li>
+                        İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle kişinin
+                        kendisi aleyhine bir sonucun ortaya çıkmasına itiraz etme,
+                    </li>
+                    <ul>
+                        Kişisel verilerin kanuna aykırı olarak işlenmesi sebebiyle zarara uğraması hâlinde zararın
+                        giderilmesini talep etme.
+                    </ul>
+
+                </ul>
+            </div>
+        </div>
+        <!-- <a href="#close-modal" rel="modal:close" class="close-modal ">Kapat</a> -->
+    </div>
+
     <!-- ======= Header ======= -->
     <header id="header">
         <div class="container">
@@ -91,15 +241,12 @@
                     <li class="clock-item"><span class="count-number days">7</span>
                         <p class="count-text">Gün</p>
                     </li>
-
                     <li class="clock-item"><span class="count-number hours">12</span>
                         <p class="count-text">Saat</p>
                     </li>
-
                     <li class="clock-item"><span class="count-number minutes">60</span>
                         <p class="count-text">Dakika</p>
                     </li>
-
                     <li class="clock-item"><span class="count-number seconds">60</span>
                         <p class="count-text">Saniye</p>
                     </li>
@@ -116,7 +263,6 @@
     </section>
     <!-- End Intro Section -->
     <main id="main">
-
         <section id="about-2" class="section-with-bg">
             <div class="container" data-aos="fade-up">
                 <div class="row" style="justify-content: center;">
@@ -125,15 +271,12 @@
                         <li class="clock-item"><span class="count-number days">7</span>
                             <p class="count-text">Gün</p>
                         </li>
-
                         <li class="clock-item"><span class="count-number hours">12</span>
                             <p class="count-text">Saat</p>
                         </li>
-
                         <li class="clock-item"><span class="count-number minutes">60</span>
                             <p class="count-text">Dakika</p>
                         </li>
-
                         <li class="clock-item"><span class="count-number seconds">60</span>
                             <p class="count-text">Saniye</p>
                         </li>
@@ -174,7 +317,6 @@
                 </div>
             </div>
         </section>
-
         <!-- End Schedule Section -->
         <section id="contact" class="section-bg" style="background-color: #fff;">
             <div class="container" data-aos="fade-up">
@@ -185,20 +327,21 @@
                     <form id="form_id" class="">
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <input name="name" class="form-control" id="name" placeholder="Ad" required />
+                                <input name="nameSurname" class="form-control" id="nameSurname" placeholder="Ad-Soyad"
+                                    required />
                                 <div class="validate"></div>
                             </div>
-                            <div class="form-group col-md-6">
+                            <!-- <div class="form-group col-md-6">
                                 <input class="form-control" name="surname" id="surname" placeholder="Soyad" required />
                                 <div class="validate"></div>
-                            </div>
+                            </div> -->
                             <div class="form-group col-md-6">
                                 <input type="email" name="email" class="form-control" id="email" placeholder="Email"
                                     required />
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group col-md-6">
-                                <input class="form-control" name="tel" id="tel" placeholder="Tel" required />
+                                <input class="form-control" name="tel" id="tel" placeholder="Telefon" required />
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group col-md-6">
@@ -570,7 +713,6 @@
                                     <option value="Yüzüncü Yıl Üniversitesi">Yüzüncü Yıl Üniversitesi
                                     </option>
                                     <option value="Zirve Üniversitesi">Zirve Üniversitesi</option>
-
                                 </select>
                                 <div class="validate"></div>
                             </div>
@@ -579,7 +721,7 @@
                                     placeholder="Bölüm Adı" required />
                                 <div class="validate"></div>
                             </div>
-                            <div class="form-group col-md-4 ">
+                            <div class="form-group col-md-6">
                                 <select class="form-control" name="class" id="className" required>
                                     <option value="" selected="selected">Sınıf Seçiniz...</option>
                                     <option value="0">Hazırlık</option>
@@ -592,16 +734,30 @@
                                     <option value="5">Mezun</option>
                                 </select>
                             </div>
+                            <div class="form-group col-md-2"></div>
+                            <div class="form-group col-md-8">
+                                <textarea style="width: 100%;padding: 3%;" name="otherQuestion" id="otherQuestion"
+                                    rows="8" placeholder="Sorularınızı bizimle paylaşın."></textarea>
+                            </div>
+                            <div class="form-group col-md-2"></div>
                         </div>
+
+                        <div class="form-group col-md-12" style="text-align: center;">
+                            <input id="checkbox-1" name="checkbox-1" type="checkbox" required>
+                            <label for="checkbox-1" style="text-transform: inherit;color: black;"><a href="#ex1"
+                                    style="color: #257bab;" rel="modal:open">KVKK </a>metnini okudum, kabul
+                                ediyorum.</label>
+                        </div>
+
                         <div class="mb-3">
                         </div>
+
                         <div class="text-center php-email-form"><button name="basvuru" type="submit">GÖNDER</button>
                         </div>
                     </form>
                 </div>
             </div>
         </section>
-
         <!-- ======= Schedule Section ======= -->
         <section id="schedule" class="section-with-bg">
             <div class="container" data-aos="fade-up">
@@ -656,10 +812,9 @@
                                     <div class="col-10">
                                         <div class="speaker-multi-css">
                                             <h4> <span>Dr. Kemal Kendir</span></h4>
-                                            <p>Pfizer Türkiye Medikal Direktörü </p>
+                                            <p>Pfizer Türkiye Medikal Direktörü</p>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -682,7 +837,6 @@
                                             <p>Pfizer Türkiye İK Direktörü</p>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -748,7 +902,6 @@
                                                 Direktörü</p>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -770,7 +923,6 @@
                                             <p>-</p>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -792,7 +944,6 @@
                                             <p>Pfizer Türkiye Medikal Part Time</p>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -805,6 +956,20 @@
                                 <div class="row resonsive-event">
                                     <div class="col-2">
                                         <div class="speaker">
+                                            <img src="assets/img/speakers/sude_cavdaroglu.jpg" alt="Sude Çavdaroğlu">
+                                        </div>
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="speaker-multi-css">
+                                            <h4> <span>Sude Çavdaroğlu - Moderatör</span></h4>
+                                            <p>Pfizer Türkiye Medikal Part Time</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr style="border-top: 1px solid rgb(47 154 214);">
+                                <div class="row resonsive-event">
+                                    <div class="col-2">
+                                        <div class="speaker">
                                             <img src="assets/img/speakers/ayse_olmez_2.jpg" alt="Tugay Onal">
                                         </div>
                                     </div>
@@ -814,7 +979,6 @@
                                             <p>Dahili Uzmanlıklar Terapötik Alan Lideri</p>
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="row resonsive-event">
                                     <div class="col-2">
@@ -828,7 +992,6 @@
                                             <p>Promosyonel Uyum ve Dijital Medikal Lideri</p>
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="row resonsive-event">
                                     <div class="col-2">
@@ -842,7 +1005,6 @@
                                             <p>Hastane İş Birimi Türkiye Medikal Lideri</p>
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="row resonsive-event">
                                     <div class="col-2">
@@ -856,7 +1018,6 @@
                                             <p>Onkoloji Ülke Medikal Lideri</p>
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="row resonsive-event">
                                     <div class="col-2">
@@ -870,7 +1031,6 @@
                                             <p>Türkiye Aşı İş Birimi Terapötik Alan Lideri</p>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -899,11 +1059,9 @@
                                             <p>Pfizer Türkiye Çalışan Deneyimi Yöneticisi</p>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
-
                         <div class="row schedule-item">
                             <div class="col-md-2"><time>16:50-17:00</time></div>
                             <div class="col-md-10">
@@ -911,13 +1069,11 @@
                                 <p></p>
                             </div>
                         </div>
-
                     </div>
                     <!-- End Schdule Day 1 -->
                 </div>
             </div>
         </section>
-
         <!-- ======= Speakers Section ======= -->
         <section id="speakers" style="background-color: #fff;">
             <div class="container" data-aos="fade-up">
@@ -944,7 +1100,7 @@
                             <img src="assets/img/speakers/kemal_kendir.jpg" alt="Speaker 2" class="img-fluid">
                             <div class="details">
                                 <h3><a>Dr. Kemal Kendir</a></h3>
-                                <p>Country Medical Director</p>
+                                <p>Pfizer Türkiye Medikal Direktörü</p>
                                 <div class="social">
                                     <a href="https://www.linkedin.com/in/kemal-kendir-md-3b4706/" target="_blank"><i
                                             class="fa fa-linkedin"></i></a>
@@ -1071,23 +1227,10 @@
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-                            <img src="assets/img/speakers/default_user.jpg" alt="Speaker 4" class="img-fluid">
-                            <div class="details">
-                                <h3><a>Dr. Ayşe Neslihan Aslan</a></h3>
-                                <p>-</p>
-                                <div class="social">
-                                    <a href="https://www.linkedin.com" target="_blank"><i
-                                            class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4">
-                        <div class="speaker" data-aos="fade-up" data-aos-delay="100">
                             <img src="assets/img/speakers/seda_tamur_ograli.jpg" alt="Speaker 4" class="img-fluid">
                             <div class="details">
                                 <h3><a>Seda Tamur Oğralı</a></h3>
-                                <p>Human Resources Director at Pfizer</p>
+                                <p>Pfizer Türkiye İK Direktörü</p>
                                 <div class="social">
                                     <a href="https://www.linkedin.com/in/seda-t-482bb51" target="_blank"><i
                                             class="fa fa-linkedin"></i></a>
@@ -1100,7 +1243,7 @@
                             <img src="assets/img/speakers/deniz_cetindamar.jpg" alt="Speaker 4" class="img-fluid">
                             <div class="details">
                                 <h3><a>Deniz Çetindamar</a></h3>
-                                <p>People Experience Manager - Business Partner</p>
+                                <p>Pfizer Türkiye Çalışan Deneyimi Yöneticisi</p>
                                 <div class="social">
                                     <a href="https://www.linkedin.com/in/deniz-%C3%A7etindamar-469924b5/"
                                         target="_blank"><i class="fa fa-linkedin"></i></a>
@@ -1108,11 +1251,25 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-4 col-md-4"></div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="speaker" data-aos="fade-up" data-aos-delay="100">
+                            <img src="assets/img/speakers/default_user.jpg" alt="Speaker 4" class="img-fluid">
+                            <div class="details">
+                                <h3><a>Dr. Ayşe Neslihan Aslan</a></h3>
+                                <p>-</p>
+                                <div class="social">
+                                    <a href="https://www.linkedin.com" target="_blank"><i
+                                            class="fa fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4"></div>
                 </div>
             </div>
         </section>
         <!-- End Speakers Section -->
-
     </main>
     <!-- End #main -->
     <!-- ======= Footer ======= -->
@@ -1181,12 +1338,12 @@
             </div>
         </div>
     </footer>
-
     <div id="dropDownSelect1"></div>
     <!-- End  Footer -->
     <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
     <!-- Vendor JS Files -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src="assets/js/bootstrap.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.customSelect/0.5.1/jquery.customSelect.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script src="http://vjs.zencdn.net/4.12/video.js"></script>
@@ -1198,7 +1355,7 @@
     <script src="assets/vendor/hoverIntent/hoverIntent.js"></script>
     <!--====Select2=====-->
     <script src="assets/js/select2.min.js"></script>
-    <script src="assets/vendor/aos/aos.js?v=1.2.2"></script>
+    <script src="assets/vendor/aos/aos.js?v=1.2.3"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js'></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
@@ -1332,7 +1489,7 @@
             });
         });
     </script>
-    <script src="assets/js/main.js?v=1.2.1"></script>
+    <script src="assets/js/main.js?v=1.2.3"></script>
 </body>
 
 </html>

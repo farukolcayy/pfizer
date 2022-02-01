@@ -1,13 +1,13 @@
 
  <?php
 
-    $name = $_POST['name'];
-    $surname = $_POST['surname'];
+    $nameSurname = $_POST['nameSurname'];
     $email = $_POST['email'];
     $tel = $_POST['tel'];
     $school_name = $_POST['school_name'];
     $school_department = $_POST['school_department'];
     $className = $_POST['className'];
+    $otherQuestion = $_POST['otherQuestion'];
 
     $data = array();
 
@@ -16,15 +16,15 @@
 
         $conn = new PDO('mysql:host=5.2.84.96;dbname=badiwork_pfizer;charset=utf8;port=3306', 'badiwork_pfizer', 'Ok?2021?.');
         $query = $conn->prepare("INSERT INTO basvuru SET
-            name = ?,
-            surname = ?,
+            nameSurname = ?,
             emailAddress = ?,
             phoneNumber = ?,
             university = ?,
             department = ?,
-            class = ?");
+            class = ?,
+            otherQuestion = ?");
     
-        $insert = $query->execute(array($name,$surname,$email,$tel,$school_name,$school_department,$className));
+        $insert = $query->execute(array($nameSurname,$email,$tel,$school_name,$school_department,$className,$otherQuestion));
     
         if ($insert) {
             $last_id = $conn->lastInsertId();
