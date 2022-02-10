@@ -1,35 +1,27 @@
 
 <?php
 
-$link = mysqli_connect("localhost", "pfizerkariyer_pfizerkariyer", "2021pfizer?", "pfizerkariyer_pfizerkariyer");
 
-// Check connection
-if ($link === false) {
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
+$nameSurname = $_POST['nameSurname'];
+$question = $_POST['question'];
 
-// Escape user inputs for security
+$data = array();
 
-$name = mysqli_real_escape_string($link, $_REQUEST['name']);
-$surname = mysqli_real_escape_string($link, $_REQUEST['surname']);
-$question = mysqli_real_escape_string($link, $_REQUEST['question']);
+try {
 
-if (!empty($name) && !empty($surname) && !empty($question)) {
+    $conn = new PDO('mysql:host=5.2.84.96;dbname=badiwork_pfizer;charset=utf8;port=3306', 'badiwork_pfizer', 'Ok?2021?.');
+    $query = $conn->prepare("INSERT INTO questions SET
+        nameSurname = ?,
+        question = ?");
 
-    $sql = "INSERT INTO live_questions (name,surname, question) VALUES ('$name','$surname', '$question')";
+    $insert = $query->execute(array($nameSurname, $question));
 
-    mysqli_set_charset($link, "utf8");
-    if (mysqli_query($link, $sql)) {
-        echo "Sorunuz iletildi";
+    if ($insert) {
+        $last_id = $conn->lastInsertId();
+        echo 'Sorunuz İletildi';
     } else {
-        echo "Hata: Sorunuz iletilemedi!";
+        echo 'Sorunuz İletilemedi!';
     }
-} else {
-    echo "Tüm alanlar doldurulmalı!";
+} catch (PDOexception $exe) {
+    echo 'Bağlantı Hatası';
 }
-
-// Close connection
-mysqli_close($link);
-
-
-?>

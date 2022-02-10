@@ -237,18 +237,228 @@
     var modal = $(this);
     modal.find('#ticket-type').val(ticketType);
   });
+  var rate1 = 0;
+  var rate2 = 0;
+  var rate3 = 0;
+  var rate4 = 0;
+  var instructorRating = "";
+  var programSubjectRating = "";
+
+  $('input[type=radio][name=star1]').change(function () {
+    rate1 = $(this).val();
+  });
+
+  $('input[type=radio][name=star2]').change(function () {
+    rate2 = $(this).val();
+  });
+
+  $('input[type=radio][name=star3]').change(function () {
+    rate3 = $(this).val();
+  });
+
+  $('input[type=radio][name=star4]').change(function () {
+    rate4 = $(this).val();
+  });
+
+  $.ajax({
+    type: 'POST',
+    dataType: "json",
+    url: '/getStreamInfo.php'
+  })
+    .done(function (data) {
+
+      if (data.status === "ok") {
+
+        $("#live-stream").html(data.result.liveLink);
+        $("#liveName").html(data.result.liveName);
+
+        instructorRating = data.result.instructorName;
+        programSubjectRating = data.result.liveName;
+        localStorage.setItem("liveStreamInstructorId", data.result.instructorId);
+
+      } else {
+        console.log(data);
+        return false;
+      }
+    })
+    .fail(function (e) {
+      console.log(e);
+      return false;
+    });
+
+  setInterval(() => {
+
+    $.ajax({
+      type: 'POST',
+      dataType: "json",
+      url: '/getStreamInfo.php'
+    })
+      .done(function (data) {
+        console.log(data);
+        if (data.status === "ok") {
+
+          $("#liveName").html(data.result.liveName);
+          instructorRating = data.result.instructorName;
+          programSubjectRating = data.result.liveName;
+
+          var _instructorId = localStorage.getItem("liveStreamInstructorId");
+
+          if (parseInt(_instructorId) != parseInt(data.result.instructorId)) {
+            
+            if (parseInt(data.result.popup) === 1) {
+
+              $('#ex9').modal({
+                fadeDuration: 1000,
+                fadeDelay: 0.50,
+                closeText: 'Kapat',
+                escapeClose: true,
+                clickClose: true,
+                showClose: true
+              });
+  
+            }
+
+          }
+
+          localStorage.setItem("liveStreamInstructorId", data.result.instructorId);
+
+
+        } else {
+          console.log(data);
+          return false;
+        }
+      })
+      .fail(function (e) {
+        console.log(e);
+        return false;
+      });
+
+  }, 1000 * 10);
 
   $(function () {
 
-        //Select2
-        $(".selection-2").select2({
-            minimumResultsForSearch: 20,
-            dropdownParent: $('#dropDownSelect1')
-        });
-        $('.selection-2').select2().on('select2:open', function (e) {
-            $('.select2-search__field').attr('placeholder', 'Ara');
-        })
+    //Select2
+    $(".selection-2").select2({
+      minimumResultsForSearch: 20,
+      dropdownParent: $('#dropDownSelect1')
     });
+    $('.selection-2').select2().on('select2:open', function (e) {
+      $('.select2-search__field').attr('placeholder', 'Ara');
+    })
+  });
+  $('#buttonRating').click(function (e) {
+
+    e.preventDefault();
+
+    $("#buttonRating").attr("disabled", true);
+    var ratingComment = $.trim($("#ratingComment").val());
+
+    if (rate1 > 0 && rate1 < 6 && rate2 > 0 && rate2 < 6 && rate3 > 0 && rate3 < 6 && rate4 > 0 && rate4 < 6) {
+      $.ajax({
+        type: 'POST',
+        url: '/insertRating.php',
+        dataType: 'json',
+        data: { liveName: "Pfizer" /*programSubjectRating*/, programSubjectRating: programSubjectRating, instructorRating: instructorRating, ratingScore: (rate1 + "-" + rate2 + "-" + rate3 + "-" + rate4), ratingComment: ratingComment }
+      })
+        .done(function (data) {
+
+          console.log(data);
+
+          if (data.status === "ok") {
+
+            // localStorage.setItem("ratingClick4CareerDate", new Date());
+            // localStorage.setItem("isRatingClick4Career", "1");
+
+            $.modal.close();
+
+            swal({
+              title: data.result,
+              icon: 'success'
+            });
+
+          } else {
+
+            $.modal.close();
+
+            swal({
+              title: data.result,
+              icon: 'success'
+            });
+
+          }
+
+          $("#buttonRating").attr("disabled", false);
+
+        })
+        .fail(function (e) {
+          console.log(e);
+
+          $.modal.close();
+
+          swal({
+            title: "Geri bildirim kaydedildi",
+            icon: 'success'
+          });
+          $("#buttonRating").attr("disabled", false);
+        });
+
+    } else {
+      swal({
+        title: "Değerlendirme eksik!",
+        icon: 'warning'
+      });
+      $("#buttonRating").attr("disabled", false);
+      return false;
+    }
+    return false;
+  });
+
+
+  $('#form-submit-question').click(function (e) {
+
+    e.preventDefault();
+
+    debugger
+    var _nameSurname = $.trim($("#nameSurname").val());
+    var _question = $.trim($("#question").val());
+
+    if (_nameSurname === "" || _nameSurname === null || _question === "" || _question === null) {
+      swal({
+        title: 'Tüm alanlar Doldurulmalı!',
+        icon: 'warning'
+      });
+      return false;
+    }
+
+    var values = $("#question-form").serialize();
+    $.ajax({
+      type: 'POST',
+      url: '/insertQuestion.php',
+      data: values
+    })
+      .done(function (data) {
+        console.log(data);
+        if ($.trim(data) === "Sorunuz İletildi") {
+          swal({
+            title: 'Sorunuz İletildi',
+            icon: 'success'
+          });
+        } else {
+          swal({
+            title: data,
+            icon: 'success'
+          });
+        }
+        $('#question-form')[0].reset();
+      })
+      .fail(function () {
+        $('#question-form')[0].reset();
+        swal("Hata", "Bağlantı Hatası", "error");
+      });
+    return false;
+  });
+
+
 
   // Init AOS
   function aos_init() {
