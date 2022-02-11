@@ -14,13 +14,14 @@ try {
 
     $conn = new PDO('mysql:host=5.2.84.96;dbname=badiwork_pfizer;charset=utf8;port=3306', 'badiwork_pfizer', 'Ok?2021?.');
     $query = $conn->prepare("INSERT INTO live_rating SET
+        emailAddress = ?,
         liveName = ?,
         programSubject = ?,
         instructor = ?,
         ratingScore = ?,
         ratingComment = ?");
 
-    $insert = $query->execute(array($liveName, $programSubject, $instructor, $ratingScore, $ratingComment));
+    $insert = $query->execute(array($emailAddress, $liveName, $programSubject, $instructor, $ratingScore, $ratingComment));
 
     if ($insert) {
         $data['status'] = 'ok';

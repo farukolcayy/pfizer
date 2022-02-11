@@ -260,32 +260,6 @@
     rate4 = $(this).val();
   });
 
-  $.ajax({
-    type: 'POST',
-    dataType: "json",
-    url: '/getStreamInfo.php'
-  })
-    .done(function (data) {
-
-      if (data.status === "ok") {
-
-        $("#live-stream").html(data.result.liveLink);
-        $("#liveName").html(data.result.liveName);
-
-        instructorRating = data.result.instructorName;
-        programSubjectRating = data.result.liveName;
-        localStorage.setItem("liveStreamInstructorId", data.result.instructorId);
-
-      } else {
-        console.log(data);
-        return false;
-      }
-    })
-    .fail(function (e) {
-      console.log(e);
-      return false;
-    });
-
   setInterval(() => {
 
     $.ajax({
@@ -294,7 +268,7 @@
       url: '/getStreamInfo.php'
     })
       .done(function (data) {
-        console.log(data);
+        // console.log(data);
         if (data.status === "ok") {
 
           $("#liveName").html(data.result.liveName);
@@ -346,6 +320,7 @@
       $('.select2-search__field').attr('placeholder', 'Ara');
     })
   });
+
   $('#buttonRating').click(function (e) {
 
     e.preventDefault();
@@ -354,11 +329,14 @@
     var ratingComment = $.trim($("#ratingComment").val());
 
     if (rate1 > 0 && rate1 < 6 && rate2 > 0 && rate2 < 6 && rate3 > 0 && rate3 < 6 && rate4 > 0 && rate4 < 6) {
+
+      var _userEmailRating = localStorage.getItem("userEmail");
+
       $.ajax({
         type: 'POST',
         url: '/insertRating.php',
         dataType: 'json',
-        data: { liveName: "Pfizer" /*programSubjectRating*/, programSubjectRating: programSubjectRating, instructorRating: instructorRating, ratingScore: (rate1 + "-" + rate2 + "-" + rate3 + "-" + rate4), ratingComment: ratingComment }
+        data: { emailAddress: _userEmailRating,liveName: "Pfizer" /*programSubjectRating*/, programSubjectRating: programSubjectRating, instructorRating: instructorRating, ratingScore: (rate1 + "-" + rate2 + "-" + rate3 + "-" + rate4), ratingComment: ratingComment }
       })
         .done(function (data) {
 
@@ -417,10 +395,10 @@
   $('#form-submit-question').click(function (e) {
 
     e.preventDefault();
-
-    debugger
+    
     var _nameSurname = $.trim($("#nameSurname").val());
     var _question = $.trim($("#question").val());
+    var _userEmail = localStorage.getItem("userEmail");
 
     if (_nameSurname === "" || _nameSurname === null || _question === "" || _question === null) {
       swal({
@@ -431,6 +409,8 @@
     }
 
     var values = $("#question-form").serialize();
+    values += "&emailAddress=" + encodeURIComponent(_userEmail);
+
     $.ajax({
       type: 'POST',
       url: '/insertQuestion.php',

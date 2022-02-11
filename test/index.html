@@ -33,10 +33,10 @@
 
 </head>
 <style>
-
-    body{
-      background-color:#e5e6e7 !important;
+    body {
+        background-color: #e5e6e7 !important;
     }
+
     .blocker {
         z-index: 9999;
     }
@@ -206,6 +206,35 @@
         <!-- <a href="#close-modal" rel="modal:close" class="close-modal ">Kapat</a> -->
     </div>
 
+    <div id="ex2" class="modal" style="z-index: 9999;">
+        <div class="form-wrapper" style="padding: 15px;border-radius: 20px;">
+            <form role="form" id="contact-form" name="contact-form" data-toggle="validator">
+                <div class="row" style="justify-content: center;">
+                    <h2 style="color: #080e23;" class="section-title-2 wow fadeInUp" data-wow-delay="0.2s">
+                        Yayın için bilgilerinizi giriniz</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-line">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="contactEmail" name="contactEmail"
+                                placeholder="E-mail" required>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-line">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="contactPhone" name="contactPhone"
+                                placeholder="Telefon" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center php-email-form"><button id="form-submit-contact" name="form-submit-contact"
+                        type="submit">Giriş</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
     <div id="ex9" class="modal" style="z-index: 9999;">
         <div id="cont-responsive" class="cont container">
             <form id="rating-form">
@@ -348,7 +377,9 @@
                     <div class="container" style="max-width: 1400px;padding: 20px 20px 120px 20px;" id="live-container">
                         <div class="row">
                             <div id="live-stream" class="col-md-9 iframe-mobile-btn">
-                                <iframe src="https://player.vimeo.com/video/659616604?h=bc7b41cc48" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="top:0;left:0;width:100%;height:550px;"></iframe>
+                                <iframe src="https://player.vimeo.com/video/659616604?h=bc7b41cc48"
+                                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                                    style="top:0;left:0;width:100%;height:550px;"></iframe>
 
                                 <!-- <iframe src="https://vimeo.com/event/963345/embed/570866ed19" frameborder="0"
                                     allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
@@ -362,7 +393,8 @@
                                         <form role="form" id="question-form" name="question-form"
                                             data-toggle="validator">
                                             <div class="row" style="justify-content: center;">
-                                                <h2 style="color: #e5e6e7;" class="section-title-2 wow fadeInUp" data-wow-delay="0.2s">
+                                                <h2 style="color: #e5e6e7;" class="section-title-2 wow fadeInUp"
+                                                    data-wow-delay="0.2s">
                                                     Konuşmacıya Soru Sor</h2>
                                             </div>
                                             <div class="row">
@@ -375,14 +407,16 @@
                                                 <div class="col-md-12 form-line">
                                                     <div class="form-group">
                                                         <textarea style="resize: none;" class="form-control"
-                                                            id="question" name="question" placeholder="Lütfen Sorunuzu Yazınız..." required
-                                                            cols="30" rows="11"></textarea>
+                                                            id="question" name="question"
+                                                            placeholder="Lütfen Sorunuzu Yazınız..." required cols="30"
+                                                            rows="11"></textarea>
                                                     </div>
-                                                </div> 
-                                            </div>
-                                                <div class="text-center php-email-form"><button id="form-submit-question" name="basvuru" type="submit">GÖNDER</button>
                                                 </div>
-                                           
+                                            </div>
+                                            <div class="text-center php-email-form"><button id="form-submit-question"
+                                                    name="basvuru" type="submit">GÖNDER</button>
+                                            </div>
+
                                         </form>
                                     </div>
                                 </div>
@@ -934,7 +968,8 @@
                 </div>
                 <ul class="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">15 Şubat Kariyer Yolculuğu</a>
+                        <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">15 Şubat Kariyer
+                            Yolculuğu</a>
                     </li>
                 </ul>
                 <!-- <h3 class="sub-heading">Voluptatem nulla veniam soluta et corrupti consequatur neque eveniet officia. Eius
@@ -1080,7 +1115,8 @@
                                 <div class="row resonsive-event">
                                     <div class="col-2">
                                         <div class="speaker">
-                                            <img src="/assets/img/speakers/ayse_neslihan_aslan.jpg" alt="Dr. Ayşe Neslihan Aslan">
+                                            <img src="/assets/img/speakers/ayse_neslihan_aslan.jpg"
+                                                alt="Dr. Ayşe Neslihan Aslan">
                                         </div>
                                     </div>
                                     <div class="col-10">
@@ -1216,7 +1252,8 @@
                                 <div class="row resonsive-event">
                                     <div class="col-2">
                                         <div class="speaker">
-                                            <img src="/assets/img/speakers/deniz_cetindamar.jpg" alt="Jack Christiansen">
+                                            <img src="/assets/img/speakers/deniz_cetindamar.jpg"
+                                                alt="Jack Christiansen">
                                         </div>
                                     </div>
                                     <div class="col-10">
@@ -1553,6 +1590,105 @@
             }, 5000);
         }
         $(document).ready(function () {
+
+            async function getStream() {
+
+                $.ajax({
+                    type: 'POST',
+                    dataType: "json",
+                    url: '/getStreamInfo.php'
+                })
+                    .done(function (data) {
+
+                        if (data.status === "ok") {
+
+                            $("#live-stream").html(data.result.liveLink);
+                            $("#liveName").html(data.result.liveName);
+
+                            instructorRating = data.result.instructorName;
+                            programSubjectRating = data.result.liveName;
+                            localStorage.setItem("liveStreamInstructorId", data.result.instructorId);
+
+                        } else {
+                            console.log(data);
+                            return false;
+                        }
+                    })
+                    .fail(function (e) {
+                        console.log(e);
+                        return false;
+                    });
+
+            }
+            var loginCheck = localStorage.getItem("isLogin");
+
+            if (loginCheck==="1") {
+
+                getStream();
+
+            } else {
+
+                setTimeout(() => {
+                    $("#ex2").modal({
+                        fadeDuration: 150,
+                        escapeClose: false,
+                        clickClose: false,
+                        showClose: false
+                    });
+                }, 1000);
+
+            }
+
+            $('#contact-form').submit(function (e) {
+
+                e.preventDefault();
+
+                var emailAddress = $('#contactEmail').val();
+                var phoneNumber = $('#contactPhone').val();
+
+                if (MailKontrol(emailAddress) === false) {
+                    swal("Uyarı", "Uygun bir e-mail adresi giriniz!", "warning");
+                    return false;
+                }
+                else if (phoneNumber === null || phoneNumber === "" || phoneNumber.length < 16) {
+                    swal("Uyarı", "Uygun bir telefon numarası giriniz!", "warning");
+                    return false;
+                }
+                else {
+
+                    // Call ajax for pass data to other place
+                    $.ajax({
+                        type: 'POST',
+                        url: '/contact.php',
+                        dataType: "json",
+                        data: { emailAddress: emailAddress, phoneNumber: phoneNumber } // getting filed value in serialize form
+                    })
+                        .done(function (data) { // if getting done then call.
+
+                            if (data.status === "ok") {
+                                localStorage.setItem("userEmail", emailAddress);
+                                localStorage.setItem("isLogin", 1);
+                                $("#ex2").modal('hide');
+                                $(".blocker").css("display", "none");
+
+                                getStream();
+
+                            } else {
+                                swal({
+                                    title: data.result,
+                                    icon: 'warning'
+                                });
+                            }
+                        })
+                        .fail(function () { // if fail then getting message
+                            swal("Hata", "Giriş başarısız! Lütfen tekrar deneyin.", "error");
+                        });
+                    return false;
+
+                }
+
+            });
+
             $("#live-button").click(function () {
                 $("#ex1").modal({
                     fadeDuration: 300
@@ -1612,10 +1748,10 @@
                     target.value = `(${zip}`;
                 }
             };
-            $(document).on("keydown", "#tel", function (e) {
+            $(document).on("keydown", "#tel,#contactPhone", function (e) {
                 enforceFormat(e);
             });
-            $(document).on("keyup", "#tel", function (e) {
+            $(document).on("keyup", "#tel,#contactPhone", function (e) {
                 formatToPhone(e);
             });
             function MailKontrol(email) {
