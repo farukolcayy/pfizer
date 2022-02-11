@@ -2301,7 +2301,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     font-size: 15px;
     box-shadow: none;
     color: #848484;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     background: #f7f7f7;
     border: 1px solid transparent;
     padding: 7px 19px;
