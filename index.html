@@ -24,7 +24,7 @@
     <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css?v=1.3.1" rel="stylesheet">
+    <link href="assets/css/style.css?v=1.3.4" rel="stylesheet">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
@@ -33,6 +33,10 @@
 
 </head>
 <style>
+    body {
+        background-color: #e5e6e7 !important;
+    }
+
     .blocker {
         z-index: 9999;
     }
@@ -202,6 +206,149 @@
         <!-- <a href="#close-modal" rel="modal:close" class="close-modal ">Kapat</a> -->
     </div>
 
+    <div id="ex2" class="modal" style="z-index: 9999;">
+        <div class="form-wrapper" style="padding: 15px;border-radius: 20px;">
+            <form role="form" id="contact-form" name="contact-form" data-toggle="validator">
+                <div class="row" style="justify-content: center;">
+                    <h2 style="color: #080e23;" class="section-title-2 wow fadeInUp" data-wow-delay="0.2s">
+                        Yayın için bilgilerinizi giriniz</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-line">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="contactEmail" name="contactEmail"
+                                placeholder="E-mail" required>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-line">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="contactPhone" name="contactPhone"
+                                placeholder="Telefon" required>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12" style="text-align: center;">
+                        <input id="checkbox-5" name="checkbox-5" type="checkbox" required>
+                        <label for="checkbox-5" style="text-transform: inherit;color: black;"><a href="/gizlilik"
+                                target="_blank" style="color: #257bab;">KVKK </a>metnini okudum, kabul
+                            ediyorum.</label>
+                    </div>
+                </div>
+                <div class="text-center php-email-form"><button id="form-submit-contact" name="form-submit-contact"
+                        type="submit">Giriş</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div id="ex9" class="modal" style="z-index: 9999;">
+        <div id="cont-responsive" class="cont container">
+            <form id="rating-form">
+                <!-- <div class="title" id="title-border">
+                    <p>Fikirlerin Bizim İçin Önemli &#128522;</p>
+                </div> -->
+                <div class="row">
+                    <div class="cont col-md-12">
+                        <div class="title-rating-question">
+                            Etkinlikte içerikler amacına yönelik hazırlanmış ve tatmin ediciydi.
+                        </div>
+                        <div class="stars">
+                            <input class="star star-5" id="star-5" type="radio" name="star1" value="5" />
+                            <label class="star star-5" for="star-5"></label>
+                            <input class="star star-4" id="star-4" type="radio" name="star1" value="4" />
+                            <label class="star star-4" for="star-4"></label>
+                            <input class="star star-3" id="star-3" type="radio" name="star1" value="3" />
+                            <label class="star star-3" for="star-3"></label>
+                            <input class="star star-2" id="star-2" type="radio" name="star1" value="2" />
+                            <label class="star star-2" for="star-2"></label>
+                            <input class="star star-1" id="star-1" type="radio" name="star1" value="1" />
+                            <label class="star star-1" for="star-1"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cont col-md-12">
+                        <div class="title-rating-question">
+                            Etkinliğin duyurulma şekli ve iletişimi başarılıydı.
+                        </div>
+                        <div class="stars">
+                            <input class="star star-5" id="star-10" type="radio" name="star2" value="5" />
+                            <label class="star star-5" for="star-10"></label>
+                            <input class="star star-4" id="star-9" type="radio" name="star2" value="4" />
+                            <label class="star star-4" for="star-9"></label>
+                            <input class="star star-3" id="star-8" type="radio" name="star2" value="3" />
+                            <label class="star star-3" for="star-8"></label>
+                            <input class="star star-2" id="star-7" type="radio" name="star2" value="2" />
+                            <label class="star star-2" for="star-7"></label>
+                            <input class="star star-1" id="star-6" type="radio" name="star2" value="1" />
+                            <label class="star star-1" for="star-6"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cont col-md-12">
+                        <div class="title-rating-question">
+                            Bu etkinliği arkadaşlarıma rahatlıkla tavsiye ederim.
+                        </div>
+                        <div class="stars">
+                            <input class="star star-5" id="star-15" type="radio" name="star3" value="5" />
+                            <label class="star star-5" for="star-15"></label>
+                            <input class="star star-4" id="star-14" type="radio" name="star3" value="4" />
+                            <label class="star star-4" for="star-14"></label>
+                            <input class="star star-3" id="star-13" type="radio" name="star3" value="3" />
+                            <label class="star star-3" for="star-13"></label>
+                            <input class="star star-2" id="star-12" type="radio" name="star3" value="2" />
+                            <label class="star star-2" for="star-12"></label>
+                            <input class="star star-1" id="star-11" type="radio" name="star3" value="1" />
+                            <label class="star star-1" for="star-11"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cont col-md-12">
+                        <div class="title-rating-question">
+                            Genel olarak etkinliği nasıl buldunuz?
+                        </div>
+                        <div class="stars">
+                            <input class="star star-5" id="star-20" type="radio" name="star4" value="5" />
+                            <label class="star star-5" for="star-20"></label>
+                            <input class="star star-4" id="star-19" type="radio" name="star4" value="4" />
+                            <label class="star star-4" for="star-19"></label>
+                            <input class="star star-3" id="star-18" type="radio" name="star4" value="3" />
+                            <label class="star star-3" for="star-18"></label>
+                            <input class="star star-2" id="star-17" type="radio" name="star4" value="2" />
+                            <label class="star star-2" for="star-17"></label>
+                            <input class="star star-1" id="star-16" type="radio" name="star4" value="1" />
+                            <label class="star star-1" for="star-16"></label>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cont col-md-12">
+                        <div class="title-rating-question">
+                            Kariyer Zirvesi hakkında yorum ve önerilerinizi bize iletebilirsiniz
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Diğer düşünceleriniz..."
+                                style="margin-top: 15px;border-radius: 11px;margin-top: 15px;" class="form-control-1"
+                                id="ratingComment" name="ratingComment" placeholder="Dİğer düşünceleriniz..."
+                                rows="5"></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="justify-content: center;margin-top: 0px;">
+                    <button class="button-rating" id="buttonRating" type="button">
+                        <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">Gönder</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
     <!-- ======= Header ======= -->
     <header id="header">
         <div class="container">
@@ -227,46 +374,105 @@
         </div>
     </header>
     <!-- End Header -->
-    <!-- ======= Intro Section ======= -->
-    <section id="intro">
-        <div class="row">
-            <div class="col-md-4 intro-logo">
-                <p class="text"> <span class="text__first"><span class="text__word" id="main_text_1">Pfizer
-                            Medikalde</span><span class="text__first-bg"></span></span><br /><span
-                        class="text__second"><span class="text__word" id="main_text_2">Kariyer Yolculuğu</span><span
-                            class="text__second-bg"></span></span>
-                </p>
-                <ul id="countdown" class="countdown count-down" data-date="February 15, 2022 14:00:00"
-                    style="padding-left: 19%;">
-                    <li class="clock-item"><span class="count-number days">7</span>
-                        <p class="count-text">Gün</p>
-                    </li>
-                    <li class="clock-item"><span class="count-number hours">12</span>
-                        <p class="count-text">Saat</p>
-                    </li>
-                    <li class="clock-item"><span class="count-number minutes">60</span>
-                        <p class="count-text">Dakika</p>
-                    </li>
-                    <li class="clock-item"><span class="count-number seconds">60</span>
-                        <p class="count-text">Saniye</p>
-                    </li>
-                </ul>
-                <img class="intro-image" src="assets/img/logo-02.png " alt="">
-            </div>
-            <div class="col-md-8">
-                <video id="videoBG" poster="assets/img/venue-gallery/poster.jpg" autoplay muted loop>
-                    <source src="assets/img/venue-gallery/Pfizer_Web_Hero_RibbonHelix_Cas9 EXTENDED_2 (1).mp4"
-                        type="video/mp4">
-                </video>
+    <!-- ======= Live Stream Section ======= -->
+    <section id="mainpage-livestream">
+        <div class="container">
+            <div class="banner-wrapper shape-a">
+                <div class="row gy-5 align-items-center">
+
+                    <div class="container" style="max-width: 1400px;padding: 20px 20px 120px 20px;" id="live-container">
+                        <div class="row">
+                            <div id="live-stream" class="col-md-9 iframe-mobile-btn">
+                                <iframe src="https://player.vimeo.com/video/677048424?h=ddaf6c9fec&autoplay=1&loop=1"
+                                    frameborder="0" allow="autoplay; fullscreen;" allowfullscreen
+                                    style="top:0;left:0;width:100%;height:550px" title="New event"></iframe>
+                                <!-- <iframe src="https://player.vimeo.com/video/659616604?h=bc7b41cc48"
+                                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                                    style="top:0;left:0;width:100%;height:550px;"></iframe> -->
+                            </div>
+                            <div class="col-md-3" id="live-question"
+                                style="background-color:#080e23;border-radius: 20px;">
+                                <div class="container-form container-form-question wow fadeInLeft"
+                                    data-wow-delay="0.2s">
+                                    <div class="form-wrapper" style="padding: 15px;border-radius: 20px;">
+                                        <form role="form" id="question-form" name="question-form"
+                                            data-toggle="validator">
+                                            <div class="row" style="justify-content: center;">
+                                                <h2 style="color: #e5e6e7;" class="section-title-2 wow fadeInUp"
+                                                    data-wow-delay="0.2s">
+                                                    Konuşmacıya Soru Sor</h2>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-line">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" id="nameSurname"
+                                                            name="nameSurname" placeholder="Ad ve Soyad" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 form-line">
+                                                    <div class="form-group">
+                                                        <textarea style="resize: none;" class="form-control"
+                                                            id="question" name="question"
+                                                            placeholder="Lütfen Sorunuzu Yazınız..." required cols="30"
+                                                            rows="11"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center php-email-form"><button id="form-submit-question"
+                                                    name="basvuru" type="submit">GÖNDER</button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-lg-6 col-12">
+
+                        <div class="banner-content">
+                            <ul id="countdown" class="countdown count-down" data-date="January 27, 2022 18:00:00">
+                                <li class="clock-item"><span class="count-number days">7</span>
+                                    <p class="count-text">Gün</p>
+                                </li>
+
+                                <li class="clock-item"><span class="count-number hours">12</span>
+                                    <p class="count-text">Saat</p>
+                                </li>
+
+                                <li class="clock-item"><span class="count-number minutes">60</span>
+                                    <p class="count-text">Dakika</p>
+                                </li>
+
+                                <li class="clock-item"><span class="count-number seconds">60</span>
+                                    <p class="count-text">Saniye</p>
+                                </li>
+                            </ul>
+                            <h1 style="margin-bottom: 0;">Geleceğe</h1>
+                            <h1 class="lab-btn" style="margin-bottom: 0;">Click4Career</h1>
+                            <h1>İle adım at!</h1>
+                            <p style="font-family:'Poppins'">Etkinlik <strong>Ücretsiz, Sertifikalı & Online </strong>
+                                Gerçekleşecektir.</p>
+
+                            <a href="#register" class="lab-btn"><span>Kayıt Ol</span> </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="banner-image">
+                            <img src="/assets/images/banner/main.png" alt="banner-img">
+                        </div>
+                    </div> -->
+                </div>
             </div>
         </div>
     </section>
-    <!-- End Intro Section -->
+
     <main id="main">
         <section id="about-2" class="section-with-bg">
             <div class="container" data-aos="fade-up">
                 <div class="row" style="justify-content: center;">
-                    <ul id="countdown2" class="countdown count-down" data-date="February 15, 2022 18:00:00"
+                    <ul id="countdown2" class="countdown count-down" data-date="February 15, 2022 14:00:00"
                         style="display: none;">
                         <li class="clock-item"><span class="count-number days">7</span>
                             <p class="count-text">Gün</p>
@@ -303,16 +509,16 @@
                 </p>
                 <div class="row" style="text-align: center;margin: 6% 0%;">
                     <div class="col-12 col-md-3 col-md-3">
-                        <img src="assets/img/sponsor/01.png" alt="Bilimsel Ekip" width="100%">
+                        <img src="/assets/img/sponsor/01.png" alt="Bilimsel Ekip" width="100%">
                     </div>
                     <div class="col-12 col-md-3 col-md-3">
-                        <img src="assets/img/sponsor/02.png" alt="Pfizer ile Medikalde Kariyer" width="100%">
+                        <img src="/assets/img/sponsor/02.png" alt="Pfizer ile Medikalde Kariyer" width="100%">
                     </div>
                     <div class="col-12 col-md-3 col-md-3">
-                        <img src="assets/img/sponsor/03.png" alt="Pfizer ile Medikalde Kariyer" width="100%">
+                        <img src="/assets/img/sponsor/03.png" alt="Pfizer ile Medikalde Kariyer" width="100%">
                     </div>
                     <div class="col-12 col-md-3 col-md-3">
-                        <img src="assets/img/sponsor/04.png" alt="Pfizer ile Medikalde Kariyer" width="100%">
+                        <img src="/assets/img/sponsor/04.png" alt="Pfizer ile Medikalde Kariyer" width="100%">
                     </div>
                 </div>
             </div>
@@ -785,7 +991,7 @@
                                 <div class="row resonsive-event">
                                     <div class="col-2">
                                         <div class="speaker">
-                                            <img src="assets/img/speakers/cem_acik.jpg" alt="Cem Açık">
+                                            <img src="/assets/img/speakers/cem_acik.jpg" alt="Cem Açık">
                                         </div>
                                     </div>
                                     <div class="col-10">
@@ -882,7 +1088,8 @@
                                     <div class="speaker">
                                         <img src="assets/img/speakers/prize_icon.jpg" alt="Prize">
                                     </div>
-                                    <h4 style="margin-top: auto;margin-bottom: auto;margin-left: 2%;">Ödüllü Kahoot Yarışması</h4>
+                                    <h4 style="margin-top: auto;margin-bottom: auto;margin-left: 2%;">Ödüllü Kahoot
+                                        Yarışması</h4>
                                 </div>
                             </div>
                         </div>
@@ -1081,7 +1288,8 @@
                                     <div class="speaker">
                                         <img src="assets/img/speakers/prize_icon.jpg" alt="Prize">
                                     </div>
-                                    <h4 style="margin-top: auto;margin-bottom: auto;margin-left: 2%;">Ödüllü Kahoot Yarışması</h4>
+                                    <h4 style="margin-top: auto;margin-bottom: auto;margin-left: 2%;">Ödüllü Kahoot
+                                        Yarışması</h4>
                                 </div>
                             </div>
                         </div>
@@ -1107,7 +1315,7 @@
                 <div class="row">
                     <!-- <div class="col-lg-6 col-md-6">
                         <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-                            <img src="assets/img/speakers/cem_acik.jpg" alt="Speaker 1" class="img-fluid">
+                            <img src="/assets/img/speakers/cem_acik.jpg" alt="Speaker 1" class="img-fluid">
                             <div class="details">
                                 <h3><a>Cem Açık</a></h3>
                                 <p>Country Manager, Turkey at Pfizer</p>
@@ -1277,7 +1485,7 @@
                     <!-- <div class="col-lg-4 col-md-4"></div>
                     <div class="col-lg-4 col-md-4">
                         <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-                            <img src="assets/img/speakers/default_user.jpg" alt="Speaker 4" class="img-fluid">
+                            <img src="/assets/img/speakers/default_user.jpg" alt="Speaker 4" class="img-fluid">
                             <div class="details">
                                 <h3><a>Dr. Ayşe Neslihan Aslan</a></h3>
                                 <p>-</p>
@@ -1378,7 +1586,7 @@
     <script src="assets/vendor/hoverIntent/hoverIntent.js"></script>
     <!--====Select2=====-->
     <script src="assets/js/select2.min.js"></script>
-    <script src="assets/vendor/aos/aos.js?v=1.2.7"></script>
+    <script src="assets/vendor/aos/aos.js?v=1.3.1"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js'></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
@@ -1410,13 +1618,112 @@
             }, 5000);
         }
         $(document).ready(function () {
+
+            async function getStream() {
+
+                $.ajax({
+                    type: 'POST',
+                    dataType: "json",
+                    url: '/getStreamInfo.php'
+                })
+                    .done(function (data) {
+
+                        if (data.status === "ok") {
+
+                            $("#live-stream").html(data.result.liveLink);
+                            $("#liveName").html(data.result.liveName);
+
+                            instructorRating = data.result.instructorName;
+                            programSubjectRating = data.result.liveName;
+                            localStorage.setItem("liveStreamInstructorId", data.result.instructorId);
+
+                        } else {
+                            console.log(data);
+                            return false;
+                        }
+                    })
+                    .fail(function (e) {
+                        console.log(e);
+                        return false;
+                    });
+
+            }
+            var loginCheck = localStorage.getItem("isLogin");
+
+            if (loginCheck === "1") {
+
+                getStream();
+
+            } else {
+
+                setTimeout(() => {
+                    $("#ex2").modal({
+                        fadeDuration: 150,
+                        escapeClose: false,
+                        clickClose: false,
+                        showClose: false
+                    });
+                }, 1000);
+
+            }
+
+            $('#contact-form').submit(function (e) {
+
+                e.preventDefault();
+
+                var emailAddress = $('#contactEmail').val();
+                var phoneNumber = $('#contactPhone').val();
+
+                if (MailKontrol(emailAddress) === false) {
+                    swal("Uyarı", "Uygun bir e-mail adresi giriniz!", "warning");
+                    return false;
+                }
+                else if (phoneNumber === null || phoneNumber === "" || phoneNumber.length < 16) {
+                    swal("Uyarı", "Uygun bir telefon numarası giriniz!", "warning");
+                    return false;
+                }
+                else {
+
+                    // Call ajax for pass data to other place
+                    $.ajax({
+                        type: 'POST',
+                        url: '/contact.php',
+                        dataType: "json",
+                        data: { emailAddress: emailAddress, phoneNumber: phoneNumber } // getting filed value in serialize form
+                    })
+                        .done(function (data) { // if getting done then call.
+
+                            if (data.status === "ok") {
+                                localStorage.setItem("userEmail", emailAddress);
+                                localStorage.setItem("isLogin", 1);
+                                $("#ex2").modal('hide');
+                                $(".blocker").css("display", "none");
+
+                                getStream();
+
+                            } else {
+                                swal({
+                                    title: data.result,
+                                    icon: 'warning'
+                                });
+                            }
+                        })
+                        .fail(function () { // if fail then getting message
+                            swal("Hata", "Giriş başarısız! Lütfen tekrar deneyin.", "error");
+                        });
+                    return false;
+
+                }
+
+            });
+
             $("#live-button").click(function () {
                 $("#ex1").modal({
                     fadeDuration: 300
                 });
             });
-            var initialSrc = "/assets/img/pfize-logo.png";
-            var scrollSrc = "/assets/img/Pfizer_White.png";
+            var initialSrc = "assets/img/pfize-logo.png";
+            var scrollSrc = "assets/img/Pfizer_White.png";
             $(window).scroll(function () {
                 var value = $(this).scrollTop();
                 if (value > 100) {
@@ -1469,10 +1776,10 @@
                     target.value = `(${zip}`;
                 }
             };
-            $(document).on("keydown", "#tel", function (e) {
+            $(document).on("keydown", "#tel,#contactPhone", function (e) {
                 enforceFormat(e);
             });
-            $(document).on("keyup", "#tel", function (e) {
+            $(document).on("keyup", "#tel,#contactPhone", function (e) {
                 formatToPhone(e);
             });
             function MailKontrol(email) {
@@ -1512,7 +1819,7 @@
             });
         });
     </script>
-    <script src="assets/js/main.js?v=1.3.1"></script>
+    <script src="assets/js/main.js?v=1.3.4"></script>
 </body>
 
 </html>
