@@ -9,7 +9,7 @@
 
     try {
 
-        $conn = new PDO('mysql:host=5.2.84.96;dbname=badiwork_pfizer;charset=utf8;port=3306', 'badiwork_pfizer', 'Ok?2021?.');
+        $conn = new PDO('mysql:host=5.2.84.96;dbname=badiwork_pfizer;charset=utf8;port=3306', '-----', '-----');
         $query = $conn->prepare("INSERT INTO contact SET
             emailAddress = ?,
             phoneNumber = ?");
